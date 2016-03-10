@@ -10,18 +10,80 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var hangmanImageView: UIImageView!
     var phrase = ""
     @IBOutlet weak var guessedLettersLabel: UILabel!
     @IBOutlet weak var currentGuessLabel: UILabel!
     var guessString = ""
+    @IBOutlet weak var wordToGuessLabel: UILabel!
+    @IBOutlet weak var exitGameButton: UIBarButtonItem!
+    
+    var correctGuesses: [Character] = []
+    var incorrectGuesses: [String] = []
+    
+    var wrongGuessCount: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        exitGameButton.tintColor = UIColor.yellowColor()
+        
         // Do any additional setup after loading the view.
         let hangmanPhrases = HangmanPhrases()
         phrase = hangmanPhrases.getRandomPhrase()
+        makeWordToGuessLabel()
         print(phrase)
+    }
+    
+    func makeWordToGuessLabel() {
+        let lengthOfWord = phrase.characters.count
+        print(lengthOfWord)
+        wordToGuessLabel.text = " "
+        
+        
+        for char in phrase.characters {
+            if char == " " {
+               wordToGuessLabel.text! += "   "
+            }
+            else if correctGuesses.contains(char) {
+                wordToGuessLabel.text! += String(char) + " "
+            }
+            else {
+                wordToGuessLabel.text! += "_  "
+            }
+            
+        }
+    }
+    
+    @IBAction func guessedButtonClicked(sender: UIButton) {
+        if phrase.containsString(guessString) {
+            print("correct guess")
+            correctGuesses.append(Character(guessString))
+            makeWordToGuessLabel()
+        }
+        else {
+            print("incorrect guess")
+            incorrectGuesses.append(guessString)
+            if incorrectGuesses.count > 1 {
+                guessedLettersLabel.text! += ", " + guessString
+            }
+            else {
+                guessedLettersLabel.text! += " " + guessString
+            }
+            wrongGuessCount += 1
+            updateHangmanImage()
+        }
+    }
+    
+    func updateHangmanImage() {
+        if wrongGuessCount + 1 > 7{
+            print("Game Over!")
+        }
+        else {
+            let imageName = "hangman" + String(wrongGuessCount + 1)
+            hangmanImageView.image = UIImage(named: imageName)
+        }
+        
     }
 
     @IBAction func keyboardButtonPressed(sender: UIButton) {
