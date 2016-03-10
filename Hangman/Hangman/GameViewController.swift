@@ -9,16 +9,29 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
+    
+    var phrase = ""
+    @IBOutlet weak var guessedLettersLabel: UILabel!
+    @IBOutlet weak var currentGuessLabel: UILabel!
+    var guessString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let hangmanPhrases = HangmanPhrases()
-        var phrase = hangmanPhrases.getRandomPhrase()
+        phrase = hangmanPhrases.getRandomPhrase()
         print(phrase)
     }
 
+    @IBAction func keyboardButtonPressed(sender: UIButton) {
+        print("clicked the \(sender.titleLabel!.text)")
+        if let char = sender.titleLabel!.text {
+            guessString = char
+            currentGuessLabel.text = "Guess: " + char
+        }
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
