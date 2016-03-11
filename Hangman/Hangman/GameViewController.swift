@@ -58,7 +58,7 @@ class GameViewController: UIViewController {
             makeWordToGuessLabel()
         }
         else {
-            if !incorrectGuesses.contains(guessString) {
+            if !incorrectGuesses.contains(guessString) && guessString != "" {
                 incorrectGuesses.append(guessString)
                 if incorrectGuesses.count > 1 {
                     guessedLettersLabel.text! += ", " + guessString
