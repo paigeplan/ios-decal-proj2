@@ -110,6 +110,7 @@
 		ECC22F411C89177600749E58 /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
+				6C42C6BE1C91FF4C00CE05D7 /* Assets.xcassets */,
 				ECC22F741C8917FF00749E58 /* Model */,
 				ECC22F731C8917DC00749E58 /* View */,
 				ECC22F721C8917D300749E58 /* Controller */,
@@ -142,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				ECC94FB71C891E31006B4A98 /* StartScreenViewController.swift */,
-				6C42C6BE1C91FF4C00CE05D7 /* Assets.xcassets */,
 				ECC22F701C8917C200749E58 /* GameViewController.swift */,
 			);
 			name = Controller;

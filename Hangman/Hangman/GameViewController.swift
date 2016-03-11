@@ -26,7 +26,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        exitGameButton.tintColor = UIColor.yellowColor()
         
         // Do any additional setup after loading the view.
         let hangmanPhrases = HangmanPhrases()
@@ -36,8 +35,6 @@ class GameViewController: UIViewController {
     }
     
     func makeWordToGuessLabel() {
-        let lengthOfWord = phrase.characters.count
-        print(lengthOfWord)
         wordToGuessLabel.text = " "
         
         
@@ -57,21 +54,21 @@ class GameViewController: UIViewController {
     
     @IBAction func guessedButtonClicked(sender: UIButton) {
         if phrase.containsString(guessString) {
-            print("correct guess")
             correctGuesses.append(Character(guessString))
             makeWordToGuessLabel()
         }
         else {
-            print("incorrect guess")
-            incorrectGuesses.append(guessString)
-            if incorrectGuesses.count > 1 {
-                guessedLettersLabel.text! += ", " + guessString
+            if !incorrectGuesses.contains(guessString) {
+                incorrectGuesses.append(guessString)
+                if incorrectGuesses.count > 1 {
+                    guessedLettersLabel.text! += ", " + guessString
+                }
+                else {
+                    guessedLettersLabel.text! += " " + guessString
+                }
+                wrongGuessCount += 1
+                updateHangmanImage()
             }
-            else {
-                guessedLettersLabel.text! += " " + guessString
-            }
-            wrongGuessCount += 1
-            updateHangmanImage()
         }
     }
     
@@ -87,7 +84,6 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func keyboardButtonPressed(sender: UIButton) {
-        print("clicked the \(sender.titleLabel!.text)")
         if let char = sender.titleLabel!.text {
             guessString = char
             currentGuessLabel.text = "Guess: " + char
