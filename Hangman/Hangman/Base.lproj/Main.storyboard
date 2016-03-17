@@ -46,7 +46,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalkboardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-tp-odn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_  _  _  _  _  _  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REI-sl-MNj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_  _  _  _  _  _  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REI-sl-MNj">
                                 <rect key="frame" x="20" y="143" width="560" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="560" id="7TU-3A-YS2"/>
@@ -58,6 +58,7 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="7TU-3A-YS2"/>
                                         <exclude reference="COD-DF-fX7"/>
                                     </mask>
                                 </variation>
@@ -1956,6 +1957,7 @@
                             <constraint firstItem="REI-sl-MNj" firstAttribute="centerX" secondItem="n0e-tp-odn" secondAttribute="centerX" id="6Jv-Oe-Fj3"/>
                             <constraint firstItem="Wm3-ZJ-qX7" firstAttribute="top" secondItem="uVa-lc-D5j" secondAttribute="bottom" constant="8" symbolic="YES" id="8Q2-SE-YYh"/>
                             <constraint firstItem="n0e-tp-odn" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="8wA-cM-q66"/>
+                            <constraint firstItem="REI-sl-MNj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AS6-lo-Wzk"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Agv-d4-qX5"/>
                             <constraint firstItem="Wm3-ZJ-qX7" firstAttribute="leading" secondItem="6uB-Cs-BMs" secondAttribute="leading" id="Bns-uc-BI6"/>
                             <constraint firstItem="uVa-lc-D5j" firstAttribute="top" secondItem="cvt-Ee-Sjl" secondAttribute="top" id="BuX-qf-aGd"/>
@@ -1969,6 +1971,7 @@
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="HFu-zg-VMd"/>
                             <constraint firstItem="n0e-tp-odn" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IvY-4y-RL9"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="top" secondItem="n0e-tp-odn" secondAttribute="bottom" constant="-168" id="JyE-ep-jo9"/>
+                            <constraint firstItem="Wm3-ZJ-qX7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kam-S5-N9O"/>
                             <constraint firstItem="uVa-lc-D5j" firstAttribute="top" secondItem="REI-sl-MNj" secondAttribute="bottom" constant="8" id="Kg2-TL-SbF"/>
                             <constraint firstItem="uVa-lc-D5j" firstAttribute="leading" secondItem="cvt-Ee-Sjl" secondAttribute="trailing" constant="-44" id="Le9-aq-6JT">
                                 <variation key="heightClass=compact" constant="8" symbolic="YES"/>
@@ -1985,17 +1988,20 @@
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wm3-ZJ-qX7" secondAttribute="bottom" constant="8" symbolic="YES" id="V6y-Kq-c27"/>
                             <constraint firstItem="REI-sl-MNj" firstAttribute="top" secondItem="cvt-Ee-Sjl" secondAttribute="bottom" constant="8" id="VFh-OU-xpg"/>
                             <constraint firstItem="n0e-tp-odn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vrg-2r-cdv"/>
+                            <constraint firstItem="uVa-lc-D5j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vsp-NG-qou"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="top" secondItem="REI-sl-MNj" secondAttribute="bottom" constant="8" symbolic="YES" id="Zct-kY-F2U"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="centerX" secondItem="n0e-tp-odn" secondAttribute="centerX" id="Zrp-Y8-g4Z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6uB-Cs-BMs" secondAttribute="bottom" constant="91" id="aKa-NK-Jt3"/>
                             <constraint firstItem="uVa-lc-D5j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="81" id="aiF-cz-mKn"/>
                             <constraint firstItem="n0e-tp-odn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="awN-cs-I4T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="REI-sl-MNj" secondAttribute="trailing" id="cBf-5E-1La"/>
                             <constraint firstItem="n0e-tp-odn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cIX-6v-CDZ"/>
                             <constraint firstAttribute="bottom" secondItem="6uB-Cs-BMs" secondAttribute="bottom" constant="20" symbolic="YES" id="cqy-4u-puA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6uB-Cs-BMs" secondAttribute="bottom" constant="91" id="fJ1-sA-b1B"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="centerX" secondItem="REI-sl-MNj" secondAttribute="centerX" id="fjT-5h-yqH"/>
                             <constraint firstItem="Wm3-ZJ-qX7" firstAttribute="top" secondItem="uVa-lc-D5j" secondAttribute="bottom" constant="8" symbolic="YES" id="fkR-pg-wT2"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="top" secondItem="Wm3-ZJ-qX7" secondAttribute="bottom" constant="36" id="frU-Se-Afg"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="REI-sl-MNj" secondAttribute="leading" id="gb4-5R-aF0"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="154" id="i4x-Se-TZo"/>
                             <constraint firstAttribute="trailing" secondItem="n0e-tp-odn" secondAttribute="trailing" id="iZA-dl-7Pw"/>
                             <constraint firstItem="REI-sl-MNj" firstAttribute="centerX" secondItem="n0e-tp-odn" secondAttribute="centerX" id="kIQ-xM-lxs"/>
@@ -2017,6 +2023,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6uB-Cs-BMs" secondAttribute="bottom" constant="47" id="soW-cd-aAy"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uVa-lc-D5j" secondAttribute="bottom" constant="8" symbolic="YES" id="tNl-1L-KCZ"/>
                             <constraint firstItem="n0e-tp-odn" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="tOn-EX-RIY"/>
+                            <constraint firstItem="cvt-Ee-Sjl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u0m-xq-Bl8"/>
                             <constraint firstItem="Wm3-ZJ-qX7" firstAttribute="leading" secondItem="uVa-lc-D5j" secondAttribute="leading" id="uMi-mm-oxx"/>
                             <constraint firstItem="n0e-tp-odn" firstAttribute="leading" secondItem="cvt-Ee-Sjl" secondAttribute="trailing" constant="-125" id="veu-n1-eee"/>
                             <constraint firstItem="6uB-Cs-BMs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wRi-Mr-lGQ"/>
@@ -2039,17 +2046,20 @@
                                 <exclude reference="veu-n1-eee"/>
                                 <exclude reference="wef-1K-tWR"/>
                                 <exclude reference="4sa-pS-ed1"/>
+                                <exclude reference="6Jv-Oe-Fj3"/>
                                 <exclude reference="E0D-Mj-4OY"/>
                                 <exclude reference="QmG-tu-Y8j"/>
                                 <exclude reference="kIQ-xM-lxs"/>
                                 <exclude reference="rm9-rl-Y1z"/>
                                 <exclude reference="CZz-9b-IOl"/>
+                                <exclude reference="Oc2-my-zSf"/>
                                 <exclude reference="rlG-Kq-skY"/>
                                 <exclude reference="BuX-qf-aGd"/>
                                 <exclude reference="Le9-aq-6JT"/>
                                 <exclude reference="UfB-YS-uhN"/>
                                 <exclude reference="aiF-cz-mKn"/>
                                 <exclude reference="mDz-XJ-cDb"/>
+                                <exclude reference="xBm-Ij-eAw"/>
                                 <exclude reference="2rk-hf-jlx"/>
                                 <exclude reference="Agv-d4-qX5"/>
                                 <exclude reference="DmR-Pf-KU9"/>
@@ -2065,6 +2075,7 @@
                                 <exclude reference="i4x-Se-TZo"/>
                                 <exclude reference="tNl-1L-KCZ"/>
                                 <exclude reference="y5f-2w-lu1"/>
+                                <exclude reference="5FH-Fd-Yik"/>
                                 <exclude reference="8Q2-SE-YYh"/>
                                 <exclude reference="Bns-uc-BI6"/>
                                 <exclude reference="MsE-yc-PyX"/>

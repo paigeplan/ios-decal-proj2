@@ -78,7 +78,7 @@ class GameViewController: UIViewController {
                 wordSoFar += String(char)
             }
             else {
-                wordToGuessLabel.text! += "_  "
+                wordToGuessLabel.text! += "-  "
             }
             
         }
@@ -103,7 +103,7 @@ class GameViewController: UIViewController {
     
     
     @IBAction func guessedButtonClicked(sender: UIButton) {
-        if wrongGuessCount >= 7 {
+        if wrongGuessCount >= 6 {
             popUpIfUserHasLost()
         }
         else if userHasWonGame {
@@ -150,12 +150,15 @@ class GameViewController: UIViewController {
     
     func updateHangmanImage() {
         if wrongGuessCount + 1 > 7{
-           
-            popUpIfUserHasLost()
+            print("game over")
+    
         }
         else {
             let imageName = "hangman" + String(wrongGuessCount + 1)
             hangmanImageView.image = UIImage(named: imageName)
+            if wrongGuessCount == 6 {
+                popUpIfUserHasLost()
+            }
         }
         
     }
