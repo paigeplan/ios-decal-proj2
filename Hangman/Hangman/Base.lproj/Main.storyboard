@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -2136,6 +2136,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Exit Game" id="IXZ-cf-UhF">
                             <connections>
                                 <segue destination="6dw-Tv-lof" kind="show" id="oK3-GT-MY3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Start Over" id="x1d-t3-CwA">
+                            <connections>
+                                <action selector="startOverButtonPressed:" destination="BYZ-38-t0r" id="Q3c-KM-Rdd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
