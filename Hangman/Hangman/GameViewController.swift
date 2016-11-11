@@ -102,7 +102,7 @@ class GameViewController: UIViewController {
     
     
     
-    @IBAction func guessedButtonClicked(sender: UIButton) {
+    @IBAction func guessedButtonClicked(_ sender: UIButton) {
         if wrongGuessCount >= 6 {
             popUpIfUserHasLost()
         }
@@ -112,7 +112,7 @@ class GameViewController: UIViewController {
         
         
         
-        else if phrase.containsString(guessString) {
+        else if phrase.contains(guessString) {
             correctGuesses.append(Character(guessString))
             makeWordToGuessLabel()
         }
@@ -135,16 +135,16 @@ class GameViewController: UIViewController {
     
     func popupIfUserWins() {
         let alertController = UIAlertController(title: "Congratulations", message:
-            "You've won!", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+            "You've won!", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func popUpIfUserHasLost() {
         let alertController = UIAlertController(title: "You've run out of moves!", message:
-            "Press 'Start Over' to start again.", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+            "Press 'Start Over' to start again.", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
@@ -163,7 +163,7 @@ class GameViewController: UIViewController {
         
     }
 
-    @IBAction func keyboardButtonPressed(sender: UIButton) {
+    @IBAction func keyboardButtonPressed(_ sender: UIButton) {
         if let char = sender.titleLabel!.text {
             guessString = char
             currentGuessLabel.text = "Guess: " + char
@@ -174,7 +174,7 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func startOverButtonPressed(sender: UIBarButtonItem) {
+    @IBAction func startOverButtonPressed(_ sender: UIBarButtonItem) {
         print("New Game")
         viewDidLoad()
         
